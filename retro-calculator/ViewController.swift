@@ -16,7 +16,6 @@ class ViewController: UIViewController {
         case Multiply = "*"
         case Subtract = "-"
         case Add = "+"
-        case Equals = "="
         case Empty = "Empty"
     }
     
@@ -28,6 +27,7 @@ class ViewController: UIViewController {
     var leftValStr = ""
     var rightValStr = ""
     var currentOperation: Operation = Operation.Empty
+    var result = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,12 +68,42 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onEqualPressed(btn: UIButton!) {
-        processOperation(Operation.Equals)
+        processOperation(currentOperation)
     }
     
     func processOperation(op: Operation) {
         playSound()
-        currentOperation = op
+        if currentOperation != Operation.Empty {
+            
+            if runningNumber != "" {
+            rightValStr = runningNumber
+            runningNumber = ""
+            
+            if currentOperation == Operation.Multiply {
+                result = "\(Double(leftValStr)! * Double(rightValStr)!)"
+                
+            } else if currentOperation == Operation.Divide {
+                result = "\(Double(leftValStr)! / Double(rightValStr)!)"
+                
+            } else if currentOperation == Operation.Add {
+                result = "\(Double(leftValStr)! + Double(rightValStr)!)"
+                
+            } else if currentOperation == Operation.Subtract {
+                result = "\(Double(leftValStr)! - Double(rightValStr)!)"
+            }
+            
+            leftValStr = result
+            outputLbl.text = result
+            }
+            
+            currentOperation = op
+            
+            
+        } else {
+            leftValStr = runningNumber
+            runningNumber = ""
+            currentOperation = op
+        }
     }
     
     func playSound() {
