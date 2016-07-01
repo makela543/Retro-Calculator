@@ -267,6 +267,9 @@
                             <constraint firstItem="aH9-C4-TwY" firstAttribute="centerY" secondItem="CxA-8K-QBY" secondAttribute="centerY" id="tA7-cm-p8i"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="outputLbl" destination="6CU-ud-E1w" id="Ql1-p5-Zxe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
