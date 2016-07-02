@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,7 +18,28 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="space-bg" translatesAutoresizingMaskIntoConstraints="NO" id="IOd-q8-zlK">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Retro-Calc" translatesAutoresizingMaskIntoConstraints="NO" id="Ega-TP-1Sm">
+                                <rect key="frame" x="61" y="225" width="478" height="149"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ega-TP-1Sm" secondAttribute="height" multiplier="478:149" id="6Ys-GZ-4kB"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ega-TP-1Sm" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="7ia-JS-oLz"/>
+                            <constraint firstItem="IOd-q8-zlK" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="9gk-PW-9yj"/>
+                            <constraint firstAttribute="trailing" secondItem="IOd-q8-zlK" secondAttribute="trailing" id="HFq-vZ-VnK"/>
+                            <constraint firstItem="Ega-TP-1Sm" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="d7c-Ox-I8X"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="IOd-q8-zlK" secondAttribute="bottom" id="fTR-n3-Rvm"/>
+                            <constraint firstItem="Ega-TP-1Sm" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="jHX-z5-Nga"/>
+                            <constraint firstItem="IOd-q8-zlK" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="rPY-Ea-2az"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ega-TP-1Sm" secondAttribute="trailing" constant="-20" id="zYD-Cd-6o8"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +47,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Retro-Calc" width="755" height="111"/>
+        <image name="space-bg" width="988" height="946"/>
+    </resources>
 </document>
