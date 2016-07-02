@@ -110,8 +110,13 @@ class ViewController: UIViewController {
             
             
         } else {
-            leftValStr = runningNumber
-            runningNumber = ""
+            
+            if runningNumber == "" {
+                leftValStr = outputLbl.text!
+            } else {
+                leftValStr = runningNumber
+                runningNumber = ""
+            }
             currentOperation = op
         }
     }
